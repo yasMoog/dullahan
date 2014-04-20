@@ -11,6 +11,12 @@
 |
 */
 
+//create a group of routes that will belong to APIv1
+Route::group(array('prefix' => 'v1'), function()
+{
+  //... insert API routes here...
+});
+
 Route::get('/', function()
 {
 	//change our view name to the view we created in a previous step
