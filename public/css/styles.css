@@ -6069,10 +6069,6 @@ button.close {
  * Do this before the responsive include, so that it can override properly as needed.
  ******************************************************************************************
  */
-body {
-  padding-top: 60px;
-  /* 60px to make the container go all the way to the bottom of the topbar */
-}
 /* this will set the position of our alerts */
 #notifications {
   width: 300px;
