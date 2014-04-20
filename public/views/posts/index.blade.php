@@ -1,0 +1,1 @@
+/Users/Geoff/Sites/dullahan/app/views/posts/index.blade.php
