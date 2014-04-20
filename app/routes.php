@@ -15,6 +15,8 @@
 Route::group(array('prefix' => 'v1'), function()
 {
   //... insert API routes here...
+	Route::resource('posts', 'V1\PostsController'); //notice the namespace
+	Route::resource('posts.comments', 'V1\PostsCommentsController'); //notice the namespace, and the nesting
 });
 
 Route::get('/', function()

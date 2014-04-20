@@ -1,10 +1,16 @@
 <?php
 
-class PostsController extends \BaseController {
+//use our new namespace
+namespace V1;
+ 
+//import classes that are not in this new namespace
+use BaseController;
+
+class CommentsController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /posts
+	 * GET /comments
 	 *
 	 * @return Response
 	 */
@@ -15,7 +21,7 @@ class PostsController extends \BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /posts/create
+	 * GET /comments/create
 	 *
 	 * @return Response
 	 */
@@ -26,7 +32,7 @@ class PostsController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /posts
+	 * POST /comments
 	 *
 	 * @return Response
 	 */
@@ -37,7 +43,7 @@ class PostsController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /posts/{id}
+	 * GET /comments/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -49,7 +55,7 @@ class PostsController extends \BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /posts/{id}/edit
+	 * GET /comments/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -61,7 +67,7 @@ class PostsController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /posts/{id}
+	 * PUT /comments/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -73,7 +79,7 @@ class PostsController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /posts/{id}
+	 * DELETE /comments/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
