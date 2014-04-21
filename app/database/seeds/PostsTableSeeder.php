@@ -1,5 +1,5 @@
 <?php
-
+ 
 class PostsTableSeeder extends Seeder {
  
   public function run()
@@ -18,10 +18,11 @@ class PostsTableSeeder extends Seeder {
         'author_name' => 'Conar Welsh',
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s'),
-      ),
+      )
     );
  
-    // Uncomment the below to run the seeder
+    //truncate the posts table each time we seed
+    DB::table('posts')->truncate();
     DB::table('posts')->insert($posts);
   }
  

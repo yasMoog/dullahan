@@ -28,7 +28,8 @@ class CommentsTableSeeder extends Seeder {
       ),
     );
  
-    // Uncomment the below to run the seeder
+    //truncate the comments table when we seed
+    DB::table('comments')->truncate();
     DB::table('comments')->insert($comments);
   }
  
