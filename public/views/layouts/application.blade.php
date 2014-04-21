@@ -83,7 +83,7 @@
  </div> <!-- /container -->
  
  <!-- Placed at the end of the document so the pages load faster -->
- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> <!-- use Google CDN for jQuery to hopefully get a cached copy -->
+ <script src="{{ asset('js/jquery-2.1.0.js') }}"></script> <!-- use Google CDN for jQuery to hopefully get a cached copy -->
  <script src="{{ asset('node_modules/underscore/underscore-min.js') }}"></script>
  <script src="{{ asset('node_modules/backbone/backbone-min.js') }}"></script>
  <script src="{{ asset('node_modules/mustache/mustache.js') }}"></script>
