@@ -11,6 +11,9 @@
 |
 */
 
+App::bind('PostRepositoryInterface', 'EloquentPostRepository');
+App::bind('CommentRepositoryInterface', 'EloquentCommentRepository');
+
 //create a group of routes that will belong to APIv1
 Route::group(array('prefix' => 'v1'), function()
 {
