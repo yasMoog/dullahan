@@ -1,30 +1,24 @@
 {{#exists}}
-  <form class="form-horizontal" action="/v1/posts/{{ comment.post_id }}/{{ id }}" method="post">
+  <form class="form-horizontal" action="{{ base_url() }}/v1/posts/{{ comment.post_id }}/{{ id }}" method="post">
     <input type="hidden" name="_method" value="PUT" />
 {{/exists}}
 {{^exists}}
-  <form class="form-horizontal" action="/v1/posts/{{ comment.post_id }}" method="post">
+  <form class="form-horizontal" action="{{ base_url() }}/v1/posts/{{ comment.post_id }}" method="post">
 {{/exists}}
  
-  <fieldset>
  
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label">Author Name</label>
-      <div class="controls">
-        <input type="text" name="author_name" value="{{ comment.author_name }}" />
-      </div>
+      <input class="form-control" type="text" name="author_name" value="{{ comment.author_name }}" />
     </div>
  
-    <div class="control-group">
+    <div class="form-group">
       <label class="control-label">Comment</label>
-      <div class="controls">
-        <textarea name="content">{{ comment.content }}</textarea>
-      </div>
+      <textarea name="content" class="form-control">{{ comment.content }}</textarea>
     </div>
  
     <div class="form-actions">
       <input type="submit" class="btn btn-primary" value="Save" />
     </div>
  
-  </fieldset>
 </form>
