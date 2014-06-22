@@ -19,6 +19,7 @@ Route::resource('sessions', 'SessionsController');
 // Users
 Route::resource('users', 'UsersController');
 	Route::get('register', 'UsersController@create');
+	Route::get('forgot-password', 'UsersController@forgot');
 	Route::get('users/{username}', 'UsersController@show');
 	// Route::get('users/{username}/edit', 'UsersController@edit'); // Maybe? Would need to default back to logged in user if there's an attempt to edit someone elses profile
 	Route::get('memberslist', 'UsersController@index');
