@@ -11,7 +11,59 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+// Sessions
+Route::resource('sessions', 'SessionsController');
+	Route::get('login', 'SessionsController@create');
+	Route::get('logout', 'SessionsController@destroy');
+
+// Users
+Route::resource('users', 'UsersController');
+	Route::get('register', 'UsersController@create');
+	Route::get('users/{username}', 'UsersController@show');
+	// Route::get('users/{username}/edit', 'UsersController@edit'); // Maybe? Would need to default back to logged in user if there's an attempt to edit someone elses profile
+	Route::get('memberslist', 'UsersController@index');
+
+// Route::resource('profile', 'ProfilesController'); // Maybe? Would be cleaner than the above alternative, but redundancy much?
+
+// Pages
+Route::get('/', 'SessionsController@create');
+Route::get('home', 'PagesController@home');
+
+// Forums
+Route::resource('forums', 'ForumsController');
+
+//	Threads
+Route::resource('threads', 'ThreadsController');
+	Route::get('threads', 'ThreadsController@create');
+	Route::get('{forum}/{thread}', 'ThreadsController@show');
+
+// Posts
+Route::resource('posts', 'PostsController');
+	Route::get('posts', 'PostsController@create');
+	Route::get('{forum}/{thread}/{id}', 'PostsController@show');
+
+// Invites
+Route::resource('invites', 'InvitesController');
+
+
+// Aliases
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+
+// Members List
+	Route::get('memberlist', 'PagesController@memberlist');
+	// Pagination (simple for now, possibly turned into a reusable function)
+	Route::get('memberslist/page/{page}', 'PageController@memberlist');
+
+Route::get('chat', 'PagesController@chatroom');
