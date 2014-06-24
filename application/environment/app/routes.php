@@ -13,7 +13,7 @@
 
 // Sessions
 Route::resource('sessions', 'SessionsController');
-	Route::get('/login', 'SessionsController@create');
+	Route::get('login', 'SessionsController@create');
 	Route::get('logout', 'SessionsController@destroy');
 
 Route::get('/', 'SessionsController@create');
