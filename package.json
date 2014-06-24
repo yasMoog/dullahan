@@ -1,0 +1,44 @@
+{
+  "name": "TheBabyDiaries",
+  "description": "",
+  "version": "0.1.0",
+  "license": "Copyright 2013.",
+  "homepage": "http://www.thebabydiaries.com.au",
+  "author": {
+    "name": "Geoffrey Chong",
+    "email": "geoff@outofthesquare.com",
+    "url": "http://geoffreychong.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "path": {
+    "dev": "application/development",
+    "deploy": "application/deploy",
+    "enviro": "application/environment/wp-content/themes/MyTheme",
+    "lib": {
+      "js": "library/javascripts",
+      "css": "library/stylesheets",
+      "images": "library/images"
+    },
+    "src": {
+      "sass": "application/source/sass",
+      "images": "application/source/images",
+      "js": "application/source/javascripts"
+    }
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-csslint": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-smushit": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-compass": "latest"
+  }
+}
