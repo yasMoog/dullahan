@@ -4,7 +4,7 @@ class SessionsController extends BaseController {
 	
 	public function create() {
 
-		if(Auth::attempt(Input::only('username','password'))) {
+		if(Auth::check() || Auth::attempt(Input::only('username','password'))) {
 			return Redirect::to('/home');
 		}
 		
