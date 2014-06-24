@@ -45,24 +45,8 @@ Route::resource('posts', 'PostsController');
 // Invites
 Route::resource('invites', 'InvitesController');
 
-
-// Aliases
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-
 // Members List
-	Route::get('memberlist', 'PagesController@memberlist');
+Route::get('memberlist', 'PagesController@memberlist');
 	// Pagination (simple for now, possibly turned into a reusable function)
 	Route::get('memberslist/page/{page}', 'PageController@memberlist');
 

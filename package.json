@@ -1,12 +1,12 @@
 {
-  "name": "TheBabyDiaries",
+  "name": "Dullahan",
   "description": "",
   "version": "0.1.0",
   "license": "Copyright 2013.",
-  "homepage": "http://www.thebabydiaries.com.au",
+  "homepage": "http://www.the-dollars.com",
   "author": {
     "name": "Geoffrey Chong",
-    "email": "geoff@outofthesquare.com",
+    "email": "me@geoffreychong.com",
     "url": "http://geoffreychong.com"
   },
   "repository": {
@@ -16,10 +16,10 @@
   "path": {
     "dev": "application/development",
     "deploy": "application/deploy",
-    "enviro": "application/environment/wp-content/themes/MyTheme",
+    "enviro": "application/environment/",
     "lib": {
-      "js": "library/javascripts",
-      "css": "library/stylesheets",
+      "js": "public/js",
+      "css": "public/css",
       "images": "library/images"
     },
     "src": {

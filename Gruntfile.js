@@ -290,7 +290,7 @@ module.exports = function(grunt) {
 	 * ========================================================================
 	 * Run preprocessing and copy files to the test environment
 	 */
-	grunt.registerTask("build", [ "clean:enviro", "sass:development", "concat:build", "copy:build"]);
+	grunt.registerTask("build", ["sass:development", "concat:build", "copy:build"]);
 
 	/**
 	 * Deploy
