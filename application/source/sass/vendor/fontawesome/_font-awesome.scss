@@ -1,0 +1,20 @@
+/*!
+ *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+
+$fa-font-path: "../fonts";
+
+@import "lib/variables";
+@import "lib/mixins";
+@import "lib/path";
+@import "lib/core";
+@import "lib/larger";
+@import "lib/fixed-width";
+@import "lib/list";
+@import "lib/bordered-pulled";
+@import "lib/spinning";
+@import "lib/rotated-flipped";
+@import "lib/stacked";
+@import "lib/icons";

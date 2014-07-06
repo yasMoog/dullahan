@@ -13,25 +13,51 @@
 
 // Sessions
 Route::resource('sessions', 'SessionsController');
-	Route::get('login', 'SessionsController@create');
+
+	// Route::get('sessions/destroy', [
+	// 	'as' => 'logout',
+	// 	'use' => 'SessionsController@destroy'
+	// ]);
+
 	Route::get('logout', 'SessionsController@destroy');
 
-Route::get('/', 'SessionsController@create');
+	Route::get('sessions/create', [
+		'as' => '/',
+		'uses' => 'SessionsController@create'
+	]);
+
+	Route::get('login', [
+		'as' => 'login',
+		'uses' => 'SessionsController@create'
+	]);
+
+Route::get('users/create', [
+	'as' => 'register',
+	'uses' => 'UsersController@create'
+]);
+
 
 Route::group(array('before' => 'auth'), function()
 {
+
+	Route::get('/', 'SessionsController@create');
+
     // Users
 	Route::resource('users', 'UsersController');
-		Route::get('register', 'UsersController@create');
-		Route::get('forgot-password', 'UsersController@forgot');
+		
+		Route::get('forgot-password', [
+			'as' => 'forgot-password',
+			'uses' => 'UsersController@forgot'
+		]);
+		
 		Route::get('users/{username}', 'UsersController@show');
 		// Route::get('users/{username}/edit', 'UsersController@edit'); // Maybe? Would need to default back to logged in user if there's an attempt to edit someone elses profile
-		Route::get('memberslist', 'UsersController@index');
+		Route::get('users', ['as' => 'memberslist', 'use' => 'UsersController@index']);
 
 	// Route::resource('profile', 'ProfilesController'); // Maybe? Would be cleaner than the above alternative, but redundancy much?
 
 	// Pages
-	Route::get('home', 'PagesController@home');
+	Route::get('home', 'HomeController@index');
 
 	// Forums
 	Route::resource('forums', 'ForumsController');
@@ -48,11 +74,6 @@ Route::group(array('before' => 'auth'), function()
 
 	// Invites
 	Route::resource('invites', 'InvitesController');
-
-	// Members List
-	Route::get('memberlist', 'PagesController@memberlist');
-		// Pagination (simple for now, possibly turned into a reusable function)
-		Route::get('memberslist/page/{page}', 'PageController@memberlist');
 
 	Route::get('chat', 'PagesController@chatroom');
 });

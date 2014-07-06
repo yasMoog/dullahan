@@ -2,6 +2,12 @@
 
 class ThreadsController extends \BaseController {
 
+	protected $thread;
+
+	public function __construct(Thread $thread) {
+		$this->thread = $thread;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -20,7 +26,7 @@ class ThreadsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		
 	}
 
 
@@ -29,9 +35,19 @@ class ThreadsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
-	{
-		//
+	public function store() {
+		
+		$input = Input::all();
+
+		if(! $this->thread->fill()->isValid()) :
+			return Redirect::back()->withInput()->withErrors($this->thread->errors);
+		endif;
+
+		$this->thread->save();
+
+		// Get newly created thread somehow and redirect 
+
+		return Redirect::to();
 	}
 
 

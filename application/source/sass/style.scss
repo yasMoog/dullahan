@@ -4,3 +4,160 @@
 	Author: Geoffrey Chong | @gyfchong
 	Website: geoffreychong.com
 */
+
+/*
+	Vendor
+*/
+
+// Bootstrap | https://github.com/twbs/bootstrap-sass
+// @import "vendor/bootstrap/bootstrap";
+
+// Foundation | http://foundation.zurb.com/
+@import "vendor/foundation/functions";
+@import "vendor/foundation/settings";
+@import "vendor/foundation/normalize";
+@import "vendor/foundation/foundation";
+
+
+// Animate css | https://github.com/daneden/animate.css
+@import "vendor/animate";
+
+// Font Awesome | http://fortawesome.github.io/Font-Awesome/
+@import "vendor/fontawesome/font-awesome";
+
+/* 
+	Custom
+*/
+
+$base-spacing-unit: 1em;
+$half-spacing-unit: $base-spacing-unit/2;
+
+body {
+	background-color: #000;
+	color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #fff;
+}
+
+.nav {
+	@include inline-list;
+	margin-bottom: 0;
+
+	& > li {
+		a {
+			padding: 0.5em;
+		}
+
+		@media #{$small-only} {
+			margin-left: 0;
+			float: none;
+		}
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	min-width: 60rem;
+}
+
+.main-header {
+	margin-bottom: 5px;
+	border-bottom: 1px solid #fff;
+}
+	.top-section {
+		margin-bottom: 5.5em;
+	}
+
+	.member-count {
+		display: inline !important;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		ul {
+			margin-left: 0;
+			margin-bottom: 0;
+			border: 2px solid #fff;
+			border-radius: 10px;
+			display: inline-block;
+
+			li {
+				margin-left: 0;
+				padding: 0.25em;
+				line-height: 1;
+				border-left: 2px solid #fff;
+				// font-size: 1.3em;
+				font-weight: 200;
+
+				&:first-child {
+					border-left: none;
+				}
+			}
+		}
+	}
+
+	.main-nav {
+		li {
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&.members {
+				position: relative;
+				a { padding-right: 8.250em; }
+			}
+		}
+
+		a {
+			color: #fff;
+			font-size: 0.8em;
+
+			&:hover {
+				color: #575757;
+			}
+		}
+
+		@media #{$large-up} {
+			margin-left: $base-spacing-unit;
+			float: left;
+		}
+	}
+
+.main-container {
+	border-top: 3px solid #fff;
+}
+
+%box-style {
+	color: #fff;
+	background-color: #575757;
+	border: 2px solid gray;
+	border-radius: 6px;
+}
+
+.forums-nav .side-nav {
+	
+	li {
+		& > a {
+			padding: 8px 15px;
+			@extend %box-style;
+
+			&:hover {
+				color: #fff;
+				background-color: #616161;
+			}
+
+			.fa {
+				margin: 0.45em 0;
+				float: right;
+				font-size: 0.8em;
+			}
+		}
+	}
+}
+
+article {
+	@extend %box-style;
+	padding: $half-spacing-unit;
+}

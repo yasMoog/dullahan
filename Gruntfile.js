@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 			{
 				files:
 				{
-					"<%= pkg.path.dev %>/style.css":
+					"<%= pkg.path.dev %>/<%= pkg.path.lib.css %>/custom.css":
 						"<%= pkg.path.src.sass %>/style.scss"
 				},
 				options:
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 			{
 				files:
 				{
-					"<%= pkg.path.deploy %>/style.css":
+					"<%= pkg.path.deploy %>/<%= pkg.path.lib.css %>/custom.css":
 						"<%= pkg.path.src.sass %>/style.scss"
 				},
 				options:
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
 				[
 					"<%= pkg.path.src.js %>/*.js"
 				],
-				dest: "<%= pkg.path.dev %>/<%= pkg.path.lib.js %>/main.js"
+				dest: "<%= pkg.path.dev %>/<%= pkg.path.lib.js %>/custom.js"
 			}
 		},
 
@@ -151,9 +151,9 @@ module.exports = function(grunt) {
 				[
 					{
 						expand: true,
-						cwd:    "<%= pkg.path.dev %>/",
+						cwd:    "<%= pkg.path.dev %>/public",
 						src:    ["**", "!**.DS_Store", ".gitignore"],
-						dest:   "<%= pkg.path.enviro %>/",
+						dest:   "<%= pkg.path.enviro %>/public",
 						dot:    true
 					}
 				]

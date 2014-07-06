@@ -3,17 +3,13 @@
 class SessionsController extends BaseController {
 	
 	public function create() {
-
-		if(Auth::check() || Auth::attempt(Input::only('username','password'))) {
-			return Redirect::to('/home');
-		}
 		
 		return View::make('landing');
 	}
 
 	public function store() {
 		
-		if(Auth::attempt(Input::only('username','password'))) :
+		if(Auth::attempt(Input::only('username','password'), true)) :
 			return Redirect::to('/home');
 		endif;
 
@@ -23,7 +19,7 @@ class SessionsController extends BaseController {
 	public function destroy() {
 		Auth::logout();
 
-		return Redirect::route('sessions.create');
+		return Redirect::to('/home');
 	}
 
 }
